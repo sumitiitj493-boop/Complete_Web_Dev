@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Card Gallery</title>
+    <link rel="stylesheet" href="Interactive_Card_Gallery.css">
+</head>
+<body>
+
+    <!-- 
+        Summary:
+        -----------------
+        This gallery displays team member cards with their profile picture, 
+        role, bio, skills, and action buttons. Each card also has a status badge
+        that indicates if the member is online, busy, or offline.
+    -->
+
+    <div class="container">
+        <h1>Team Members</h1>
+
+        <div class="card-gallery">
+
+            <!-- Card 1 -->
+            <div class="card" data-status="online">
+                <div class="card-header">
+                    <img src="IMG-20240512-WA0003.jpg" alt="Profile 1">
+                    <span class="status-badge"></span>
+                </div>
+                <div class="card-body">
+                    <h2>Sumit Kumar</h2>
+                    <p class="role">Frontend Developer</p>
+                    <p class="bio">Passionate about creating beautiful user interfaces with React and CSS.</p>
+                    <div class="skills">
+                        <span class="skill">React</span>
+                        <span class="skill">CSS</span>
+                        <span class="skill">JavaScript</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">View Profile</button>
+                    <button class="btn btn-secondary">Message</button>
+                </div>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="card" data-status="busy">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/150?img=2" alt="Profile 2">
+                    <span class="status-badge"></span>
+                </div>
+                <div class="card-body">
+                    <h2>Sarah Williams</h2>
+                    <p class="role">Backend Developer</p>
+                    <p class="bio">Building scalable APIs and databases. Coffee enthusiast.</p>
+                    <div class="skills">
+                        <span class="skill">Node.js</span>
+                        <span class="skill">MongoDB</span>
+                        <span class="skill">Python</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">View Profile</button>
+                    <button class="btn btn-secondary">Message</button>
+                </div>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="card" data-status="offline">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/150?img=3" alt="Profile 3">
+                    <span class="status-badge"></span>
+                </div>
+                <div class="card-body">
+                    <h2>Michael Chen</h2>
+                    <p class="role">UI/UX Designer</p>
+                    <p class="bio">Designing delightful experiences that users love.</p>
+                    <div class="skills">
+                        <span class="skill">Figma</span>
+                        <span class="skill">Photoshop</span>
+                        <span class="skill">Sketch</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">View Profile</button>
+                    <button class="btn btn-secondary">Message</button>
+                </div>
+            </div>
+
+            <!-- Card 4 -->
+            <div class="card" data-status="online">
+                <div class="card-header">
+                    <img src="https://i.pravatar.cc/150?img=4" alt="Profile 4">
+                    <span class="status-badge"></span>
+                </div>
+                <div class="card-body">
+                    <h2>Emily Davis</h2>
+                    <p class="role">Full-Stack Developer</p>
+                    <p class="bio">Jack of all trades, master of debugging at 3 AM.</p>
+                    <div class="skills">
+                        <span class="skill">React</span>
+                        <span class="skill">Express</span>
+                        <span class="skill">PostgreSQL</span>
+                    </div>
+                </div>
+                <div class="card-footer">
+                    <button class="btn btn-primary">View Profile</button>
+                    <button class="btn btn-secondary">Message</button>
+                </div>
+            </div>
+
+        </div> <!-- End of card-gallery -->
+    </div> <!-- End of container -->
+
+</body>
+</html>

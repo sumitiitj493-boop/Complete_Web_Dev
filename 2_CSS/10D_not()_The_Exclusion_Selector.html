@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>:not() Pseudo-class Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- 
+        Summary / Purpose:
+        -----------------
+        In this demo, we are learning about the :not() pseudo-class in CSS, 
+        which allows us to style all elements EXCEPT the ones we want to exclude.
+
+        What we are going to do:
+        1. Style all buttons except the primary button.
+        2. Add margin to all paragraphs except the first one.
+        3. Style all internal links differently from external links.
+    -->
+
+    <h1>:not() Exclusion Selector Demo</h1>
+
+    <!-- Buttons Section -->
+    <h2>Buttons Example</h2>
+    <!-- All buttons here will be styled, except the one with class "primary" -->
+    <button>Default Button 1</button>
+    <button class="primary">Primary Button</button>
+    <button>Default Button 2</button>
+    <button class="secondary">Secondary Button</button>
+
+    <hr>
+
+    <!-- Paragraphs Section -->
+    <h2>Paragraphs Example</h2>
+    <!-- Only the first paragraph is excluded from margin-top styling -->
+    <p>First paragraph (excluded)</p>
+    <p>Second paragraph (margin applied)</p>
+    <p>Third paragraph (margin applied)</p>
+
+    <hr>
+
+    <!-- Links Section -->
+    <h2>Links Example</h2>
+    <!-- Internal links will be blue, external links are green -->
+    <a href="/about">About Us</a><br>
+    <a href="contact.html">Contact</a><br>
+    <a href="https://www.google.com">Google</a><br>
+    <a href="https://www.github.com">GitHub</a>
+
+</body>
+</html>

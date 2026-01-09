@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Form Pseudo-classes Demo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Form States Demo</h1>
+
+    <form>
+        <!-- Enabled input -->
+        <label for="name">Name (required):</label> <!--label is used to associate the input with a text-->
+        <input type="text" id="name" name="name" required placeholder="Enter your name"><br><br>
+
+        <!-- Disabled input -->
+        <label for="email">Email (disabled):</label>
+        <input type="email" id="email" name="email" disabled placeholder="Disabled input"><br><br>
+
+        <!-- Checked checkbox -->
+        <label>
+            <input type="checkbox" checked> Subscribe to newsletter
+        </label><br><br>
+
+        <!-- Radio buttons -->
+        <label>
+            <input type="radio" name="gender" value="male" checked> Male
+        </label>
+        <label>
+            <input type="radio" name="gender" value="female"> Female
+        </label><br><br>
+
+        <!-- Input with invalid/valid validation -->
+        <label for="phone">Phone (10 digits):</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone"><br><br>
+
+        <button type="submit">Submit</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,42 @@
+/* Element selector → 1 point */
+p {
+    color: blue;
+}
+
+/* Class selector → 10 points */
+.text {
+    color: red;
+}
+
+/* ID selector → 100 points */
+#main {
+    color: green;
+}
+
+/* Combined selectors → 2 or more points */
+div p {
+    color: purple; /* 1 + 1 = 2 points */
+}
+
+.container .text {
+    color: orange; /* 10 + 10 = 20 points */
+}
+
+#main .text {
+    color: yellow; /* 100 + 10 = 110 points */
+}
+
+/* High specificity → wins over everything */
+div#main.container p.text {
+    color: pink; /* 1 + 100 + 10 + 1 + 10 = 122 points */
+}
+
+/* !important example (override everything) */
+p#inline-example.text {
+    color: black !important; /* Overrides inline style and all above rules */
+}
+
+/* Tie-breaker rule (last wins if specificity equal) */
+.text {
+    color: purple; /* Will override previous .text red rule (same specificity, last wins) */
+}

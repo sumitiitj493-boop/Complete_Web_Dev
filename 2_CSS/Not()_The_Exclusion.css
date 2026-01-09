@@ -1,0 +1,52 @@
+/* General styles for body */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* -------------------------------
+   Buttons Section
+---------------------------------*/
+button {
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Style all buttons EXCEPT the one with class .primary */
+button:not(.primary) {
+    background-color: gray;
+    color: white;
+}
+
+/* Primary button style (excluded from above) */
+button.primary {
+    background-color: orange;
+    color: white;
+}
+
+/* -------------------------------
+   Paragraphs Section
+---------------------------------*/
+/* Apply top margin to all paragraphs except the first one */
+p:not(:first-child) {
+    margin-top: 20px;
+    color: #555;
+}
+
+/* -------------------------------
+   Links Section
+---------------------------------*/
+/* Style all internal links (href does NOT start with http) */
+a:not([href^="http"]) {
+    color: blue;
+    text-decoration: underline;
+}
+
+/* Style external links separately (for clarity) */
+a[href^="http"] {
+    color: green;
+    font-weight: bold;
+}

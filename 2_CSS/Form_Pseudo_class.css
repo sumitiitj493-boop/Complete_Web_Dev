@@ -1,0 +1,45 @@
+/* General form styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+input {
+    padding: 8px;
+    margin: 5px 0;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+/* Disabled inputs */
+input:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Enabled inputs */
+input:enabled {
+    background-color: white;
+    cursor: pointer;/*Bydefault cursor is there whether it is enabled or disabled*/
+}
+
+/* Checked checkboxes/radio buttons */
+input:checked {
+    transform: scale(1.2);
+}
+
+/* Invalid form inputs */
+input:invalid {
+    border: 2px solid red;
+}
+
+/* Valid form inputs */
+input:valid {
+    border: 2px solid green;
+}
+
+/* Required form fields */
+input:required {
+    border-left: 4px solid orange;
+}

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus - The Future of AI Integration</title>
+    
+    <!-- Load Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Load Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- Load Inter Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Basic setup for smooth scrolling and font */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+    </style>
+    
+    <script>
+        // Custom Tailwind theme configuration
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Brand color palette
+                        primary: {
+                            DEFAULT: '#6366F1', // Indigo 500
+                            light: '#818CF8',   // Indigo 400
+                            dark: '#4F46E5',    // Indigo 600
+                        },
+                        secondary: {
+                            DEFAULT: '#10B981', // Emerald 500
+                            dark: '#059669',    // Emerald 600
+                        },
+                    },
+                    animation: {
+                        // Subtle fade-in animation
+                        'fade-in-up': 'fadeInUp 0.8s ease-out forwards',
+                        'subtle-pulse': 'subtlePulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+                    },
+                    keyframes: {
+                        fadeInUp: {
+                            '0%': { opacity: '0', transform: 'translateY(20px)' },
+                            '100%': { opacity: '1', transform: 'translateY(0)' },
+                        },
+                        subtlePulse: {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '.7' },
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-white text-gray-900">
+
+    <!-- 
+      Header & Navigation 
+      Features: Sticky, backdrop-blur, shadow, responsive mobile menu
+    -->
+    <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md shadow-sm">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <!-- Logo -->
+                <a href="#home" class="flex-shrink-0 flex items-center gap-2">
+                    <span class="text-white bg-primary p-2 rounded-lg">
+                        <i data-lucide="brain-circuit"></i>
+                    </span>
+                    <span class="text-2xl font-bold text-primary-dark">Nexus</span>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <nav class="hidden md:flex md:items-center md:space-x-8">
+                    <a href="#features" class="font-medium text-gray-600 hover:text-primary transition-colors duration-200">Features</a>
+                    <a href="#solutions" class="font-medium text-gray-600 hover:text-primary transition-colors duration-200">Solutions</a>
+                    <a href="#pricing" class="font-medium text-gray-600 hover:text-primary transition-colors duration-200">Pricing</a>
+                    <a href="#contact" class="font-medium text-gray-600 hover:text-primary transition-colors duration-200">Contact</a>
+                </nav>
+                
+                <div class="flex items-center gap-4">
+                    <!-- CTA Button (Desktop) -->
+                    <a href="#" class="hidden md:inline-flex items-center justify-center px-5 py-2 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 shadow-md">
+                        Get Started
+                    </a>
+
+                    <!-- Mobile Menu Button -->
+                    <button id="menu-btn" class="md:hidden inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-primary hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-primary">
+                        <span class="sr-only">Open main menu</span>
+                        <i data-lucide="menu" class="h-6 w-6" id="menu-icon-open"></i>
+                        <i data-lucide="x" class="h-6 w-6 hidden" id="menu-icon-close"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu (Dropdown) -->
+        <div id="mobile-menu" class="hidden md:hidden absolute top-16 left-0 right-0 w-full bg-white shadow-xl z-40">
+            <div class="px-2 pt-2 pb-4 space-y-1 sm:px-3">
+                <a href="#features" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mobile-menu-link">Features</a>
+                <a href="#solutions" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mobile-menu-link">Solutions</a>
+                <a href="#pricing" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mobile-menu-link">Pricing</a>
+                <a href="#contact" class="block px-3 py-2 rounded-lg text-base font-medium text-gray-700 hover:text-primary hover:bg-gray-50 mobile-menu-link">Contact</a>
+            </div>
+            <a href="#" class="block w-full px-5 py-3 text-center font-medium text-white bg-primary hover:bg-primary-dark">
+                Get Started
+            </a>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        
+        <!-- 
+          Hero Section 
+          Features: Gradient text, animation, responsive layout
+        -->
+        <section id="home" class="relative py-24 md:py-32 lg:py-40 overflow-hidden">
+            <!-- Background Gradient -->
+            <div class="absolute inset-x-0 top-0 -z-10 transform-gpu overflow-hidden blur-3xl">
+                <div class="relative left-[calc(50%-11rem)] aspect-[1155/678] w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-gradient-to-tr from-[#808CF8] to-[#6366F1] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]" style="clip-path: polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)"></div>
+            </div>
+            
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight animate-fade-in-up" style="animation-delay: 0.2s;">
+                    <span class="block">Harness the True</span>
+                    <span class="block text-transparent bg-clip-text bg-gradient-to-r from-primary to-secondary-dark">Power of AI</span>
+                </h1>
+                <p class="mt-6 text-lg sm:text-xl text-gray-600 max-w-2xl mx-auto animate-fade-in-up" style="animation-delay: 0.4s;">
+                    Nexus is the all-in-one platform that integrates cutting-edge AI into your workflow, automating tasks, unlocking insights, and scaling your business.
+                </p>
+                <div class="mt-10 flex flex-col sm:flex-row justify-center gap-4 animate-fade-in-up" style="animation-delay: 0.6s;">
+                    <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-white bg-primary hover:bg-primary-dark transition-all duration-200 transform hover:-translate-y-0.5 shadow-xl">
+                        Start Free Trial
+                    </a>
+                    <a href="#features" class="inline-flex items-center justify-center px-8 py-3.5 text-lg font-medium rounded-lg text-primary bg-primary/10 hover:bg-primary/20 transition-all duration-200">
+                        Explore Features
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Features Section 
+          Features: Grid layout, hover-transform, custom icons
+        -->
+        <section id="features" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-base font-semibold text-primary uppercase tracking-wide">Features</h2>
+                    <p class="mt-2 text-3xl sm:text-4xl font-extrabold tracking-tight">Everything you need, nothing you don't</p>
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                    <!-- Feature Card 1 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                        <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                            <i data-lucide="zap"></i>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">AI Automation</h3>
+                        <p class="mt-2 text-base text-gray-600">Automate repetitive tasks, from data entry to customer support, with our intelligent workflow engine.</p>
+                    </div>
+                    
+                    <!-- Feature Card 2 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                        <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                            <i data-lucide="bar-chart-3"></i>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">Deep Analytics</h3>
+                        <p class="mt-2 text-base text-gray-600">Uncover hidden insights and make data-driven decisions with predictive analytics and real-time dashboards.</p>
+                    </div>
+                    
+                    <!-- Feature Card 3 -->
+                    <div class="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 transform hover:scale-105 hover:shadow-xl transition-all duration-300">
+                        <div class="inline-flex items-center justify-center h-12 w-12 rounded-lg bg-primary/10 text-primary">
+                            <i data-lucide="brain-cog"></i>
+                        </div>
+                        <h3 class="mt-5 text-xl font-semibold">Generative Content</h3>
+                        <p class="mt-2 text-base text-gray-600">Create high-quality marketing copy, code, and images in seconds with our advanced generative models.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Solutions / "How it Works" Section 
+          Features: Alternating grid, image placeholders
+        -->
+        <section id="solutions" class="py-24 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16 lg:items-center">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+                            A solution built for <span class="text-primary">your entire team</span>
+                        </h2>
+                        <p class="mt-6 text-lg text-gray-600">
+                            Whether you're in marketing, sales, or engineering, Nexus provides the tools to boost productivity and drive innovation across every department.
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-lucide="check-circle-2" class="h-6 w-6 text-secondary"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-600">
+                                    <span class="font-medium">For Marketers:</span> Generate campaigns and analyze sentiment at scale.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-lucide="check-circle-2" class="h-6 w-6 text-secondary"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-600">
+                                    <span class="font-medium">For Developers:</span> Accelerate development with an AI coding assistant and API.
+                                </p>
+                            </li>
+                            <li class="flex items-start">
+                                <div class="flex-shrink-0">
+                                    <i data-lucide="check-circle-2" class="h-6 w-6 text-secondary"></i>
+                                </div>
+                                <p class="ml-3 text-base text-gray-600">
+                                    <span class="font-medium">For Support:</span> Resolve issues faster with an AI-powered knowledge base.
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div class="mt-12 lg:mt-0">
+                        <img class="w-full rounded-2xl shadow-xl" src="https://placehold.co/600x400/6366F1/FFFFFF?text=Team+Workflow+Diagram" alt="Team workflow"
+                        onerror="this.src='https://placehold.co/600x400/6366F1/FFFFFF?text=Image+Not+Found'">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Pricing Section 
+          Features: 3-col layout, "Most Popular" badge, hover shadow
+        -->
+        <section id="pricing" class="py-24 bg-gray-50">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">Simple, transparent pricing</h2>
+                    <p class="mt-4 text-lg text-gray-600">Choose the plan that's right for your needs.</p>
+                </div>
+                
+                <div class="mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Starter Plan -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold">Starter</h3>
+                        <p class="mt-2 text-gray-600">For individuals and small teams.</p>
+                        <p class="mt-6">
+                            <span class="text-5xl font-extrabold">$29</span>
+                            <span class="text-base font-medium text-gray-600">/mo</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <!-- Features list -->
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>10 AI Workflows</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>10,000 Gen Credits</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>Basic Analytics</li>
+                        </ul>
+                        <a href="#" class="mt-auto pt-4">
+                            <span class="w-full inline-flex justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-primary bg-white hover:bg-gray-50 transition-colors">
+                                Get Started
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Pro Plan (Most Popular) -->
+                    <div class="bg-white rounded-2xl shadow-2xl border-2 border-primary p-8 flex flex-col relative transform lg:scale-105">
+                        <span class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary px-4 py-1.5 rounded-full text-sm font-semibold text-white uppercase tracking-wider">Most Popular</span>
+                        <h3 class="text-2xl font-semibold">Pro</h3>
+                        <p class="mt-2 text-gray-600">For growing businesses.</p>
+                        <p class="mt-6">
+                            <span class="text-5xl font-extrabold">$99</span>
+                            <span class="text-base font-medium text-gray-600">/mo</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <!-- Features list -->
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>Unlimited AI Workflows</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>100,000 Gen Credits</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>Advanced Analytics</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>API Access</li>
+                        </ul>
+                        <a href="#" class="mt-auto pt-4">
+                            <span class="w-full inline-flex justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg text-white bg-primary hover:bg-primary-dark transition-colors shadow-md">
+                                Choose Pro
+                            </span>
+                        </a>
+                    </div>
+                    
+                    <!-- Enterprise Plan -->
+                    <div class="bg-white rounded-2xl shadow-lg border border-gray-200 p-8 flex flex-col hover:shadow-xl transition-shadow duration-300">
+                        <h3 class="text-2xl font-semibold">Enterprise</h3>
+                        <p class="mt-2 text-gray-600">For large-scale operations.</p>
+                        <p class="mt-6">
+                            <span class="text-5xl font-extrabold">Custom</span>
+                        </p>
+                        <ul class="mt-8 space-y-4">
+                            <!-- Features list -->
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>Unlimited Everything</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>On-premise Deployment</li>
+                            <li class="flex items-center"><i data-lucide="check" class="h-5 w-5 text-secondary mr-2"></i>Dedicated Support</li>
+                        </ul>
+                        <a href="#" class="mt-auto pt-4">
+                            <span class="w-full inline-flex justify-center px-6 py-3 border border-gray-300 text-base font-medium rounded-lg text-primary bg-white hover:bg-gray-50 transition-colors">
+                                Contact Sales
+                            </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 
+          Final CTA Section
+          Features: Dark background, centered content
+        -->
+        <section id="contact" class="bg-gray-900">
+            <div class="max-w-4xl mx-auto py-20 px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white">
+                    Start building the future today.
+                </h2>
+                <p class="mt-4 text-lg text-gray-300">
+                    Join thousands of innovative companies transforming their business with Nexus.
+                </p>
+                <a href="#" class="mt-8 inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-lg font-medium rounded-lg text-primary-dark bg-white hover:bg-gray-100 transition-all duration-200 transform hover:-translate-y-0.5 shadow-xl">
+                    Start Free Trial
+                </a>
+            </div>
+        </section>
+        
+    </main>
+
+    <!-- 
+      Footer
+      Features: Multi-column layout, social links
+    -->
+    <footer class="bg-white border-t border-gray-200">
+        <div class="max-w-7xl mx-auto py-12 px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+                <!-- Column 1: Logo & Social -->
+                <div class="col-span-2 md:col-span-1">
+                     <a href="#home" class="flex-shrink-0 flex items-center gap-2">
+                        <span class="text-white bg-primary p-2 rounded-lg">
+                            <i data-lucide="brain-circuit"></i>
+                        </span>
+                        <span class="text-2xl font-bold text-primary-dark">Nexus</span>
+                    </a>
+                    <p class="mt-4 text-base text-gray-500">The future of AI integration.</p>
+                    <div class="mt-6 flex space-x-5">
+                        <a href="#" class="text-gray-400 hover:text-gray-500"><i data-lucide="twitter"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-500"><i data-lucide="github"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-gray-500"><i data-lucide="linkedin"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Column 2: Solutions -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Solutions</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Automation</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Analytics</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Marketing</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Development</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3: Company -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Company</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">About</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Careers</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Blog</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Press</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4: Legal -->
+                <div>
+                    <h3 class="text-sm font-semibold text-gray-500 tracking-wider uppercase">Legal</h3>
+                    <ul class="mt-4 space-y-3">
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Privacy</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Terms</a></li>
+                        <li><a href="#" class="text-base text-gray-600 hover:text-primary">Security</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="mt-10 border-t border-gray-200 pt-8 text-center">
+                <p class="text-base text-gray-500">&copy; 2025 Nexus AI, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- 
+      JavaScript
+      Handles mobile menu toggle and icon switching
+    -->
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+        
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIconOpen = document.getElementById('menu-icon-open');
+        const menuIconClose = document.getElementById('menu-icon-close');
+        
+        menuBtn.addEventListener('click', () => {
+            const isExpanded = menuBtn.getAttribute('aria-expanded') === 'true';
+            menuBtn.setAttribute('aria-expanded', !isExpanded);
+            mobileMenu.classList.toggle('hidden');
+            menuIconOpen.classList.toggle('hidden');
+            menuIconClose.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when a link is clicked
+        document.querySelectorAll('.mobile-menu-link').forEach(link => {
+            link.addEventListener('click', () => {
+                menuBtn.setAttribute('aria-expanded', 'false');
+                mobileMenu.classList.add('hidden');
+                menuIconOpen.classList.remove('hidden');
+                menuIconClose.classList.add('hidden');
+            });
+        });
+    </script>
+</body>
+</html>

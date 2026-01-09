@@ -1,0 +1,61 @@
+/* General Page Styling */
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  background: #f8f8f8;
+  color: #333;
+}
+h1 {
+  color: #007bff;
+  text-align: center;
+}
+hr {
+  margin: 20px 0;
+}
+
+/* 1️ Has the attribute */
+[type] {
+  border: 2px solid blue;
+  padding: 5px;
+  margin: 5px;
+}
+
+/* 2️ Exact match */
+[type="text"] {
+  background: lightyellow;
+}
+
+/* 3️ Starts with */
+[href^="https"] {
+  color: green; /* Secure links in green */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* 4️ Ends with */
+[href$=".pdf"] {
+  color: red; /* PDF links in red */
+  font-weight: bold;
+}
+
+/* 5️ Contains */
+[class*="btn"] {
+  background-color: #444;
+  color: white;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 6px;
+  margin: 5px;
+  cursor: pointer;
+}
+
+/* Optional hover for buttons */
+[class*="btn"]:hover {
+  background-color: #c61010;
+}
+/*       [type="email"] { //If we enable this then it will style all email fields 
+         background: lightyellow;
+         }                                   */
+[placeholder="No type attribute"] {
+  background: rgb(255, 224, 241);
+}

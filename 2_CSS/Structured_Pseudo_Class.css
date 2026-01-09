@@ -1,0 +1,42 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* First child of its parent */
+li:first-child {
+    font-weight: bold;
+}
+
+/* Last child of its parent */
+li:last-child {
+    border-bottom: none;
+}
+
+/* Every 2nd element (2, 4, 6, 8,...) */
+li:nth-child(2n) {
+    background-color: #f0f0f0;
+}
+
+/* Every odd element (1, 3, 5, 7,...) */
+li:nth-child(odd) {
+    background-color: white;
+}
+
+/* The 3rd element specifically */
+li:nth-child(3) {
+    color: red;
+}
+
+/* Every 3rd element starting from 2nd */
+li:nth-child(3n+2) {
+    font-style: italic;
+}
+
+/* Only child (no siblings) */
+p:only-child { /* Only for paragraph, if it's the only child of its parent */
+    text-align: center;
+    color: blue;
+    font-weight: bold;
+}

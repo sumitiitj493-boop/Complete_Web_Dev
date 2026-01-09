@@ -1,0 +1,88 @@
+/* =====================================================
+ 🎨 style.css — Structured, Clean, and Readable
+ Author: Sumit Kumar
+ Project: Web Dev Learning Series 🌐
+ Step: CSS Box Model Practice (Step 4)
+===================================================== */
+
+/* 🌎 GLOBAL RESET & BOX-SIZING
+------------------------------------------------------ */
+* {
+  box-sizing: border-box; /* Includes padding & border in element’s total size */
+  margin: 0;               /* Removes default browser margin */
+  padding: 0;              /* Removes default browser padding */
+}
+
+/* 🧍 BODY STYLING
+------------------------------------------------------ */
+body {
+  background-color: #f0f0f0;      /* Soft grey background */
+  padding: 50px;                  /* Breathing space around content */
+  font-family: Arial, sans-serif; /* Clean, modern font */
+}
+
+/* 💳 CARD COMPONENT
+------------------------------------------------------ */
+.card {
+  width: 300px;                     /* Fixed card width */
+  background-color: #ffffff;        /* White card surface */
+  
+  /* ✨ Spacing & Border */
+  padding: 30px;                    /* Inner spacing */
+  border: 10px solid #ddd;           /* Subtle grey border */
+  border-radius: 10px;              /* Smooth rounded corners */
+
+  /* 🪄 Layout & Shadow */
+  margin: 20px;                     /* Space between multiple cards */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft depth shadow */
+  display: inline-block;            /* Align cards side-by-side. I mean to say that we want to display the cards side by side in a single row.If we don't use this property then the cards will be displayed one below the other in a single column.*/
+}
+
+/* 🏷️ CARD HEADINGS
+------------------------------------------------------ */
+.card h2 {
+  color: #333;          /* Dark grey text */
+  margin-bottom: 15px;  /* Space below the heading */
+  font-size: 24px;      /* Medium-large size */
+}
+
+/* 📝 CARD PARAGRAPHS
+------------------------------------------------------ */
+.card p {
+  color: #666;            /* Medium grey text */
+  line-height: 1.6;       /* Comfortable text spacing */
+  margin-bottom: 20px;    /* Space before the button.i.e Space between this object and the next object.*/
+}
+
+/* 🔘 CARD BUTTON
+------------------------------------------------------ */
+.card button {
+  background-color: #007bff; /* Primary blue button */
+  color: white;              /* White text */
+  padding: 10px 20px;        /* Vertical & horizontal space */
+  border: none;              /* No border */
+  border-radius: 5px;        /* Slightly rounded corners */
+  cursor: pointer;           /* Pointer on hover. This is used to indicate that the button is clickable.If we don't use this property then the cursor will be a default cursor which is not clickable.*/
+  transition: background-color 2.9s ease; /* Smooth hover effect */
+}
+.card img {
+  width: 100px;            /* full width */
+  height: auto;            /* full height */
+  border-radius: 50%;     /* round image */
+  object-fit: cover;       /* prevents distortion */
+  margin-bottom: 15px;
+}
+
+/* ✨ BUTTON HOVER EFFECT
+------------------------------------------------------ */
+.card button:hover {
+  background-color: #0c0d0e; /* Darker blue on hover. This is the color that will be displayed when we hover(mtlb yrr kuchh der tak ruko n bina click kiye bus hand ko waha le jakar ke chhod do phir dekho jadu ) over the button.If we don't use this property then the button will remain the same color as the primary color.This is more useful than the default hover color because it gives the user a visual indication that the button is clickable.*/
+} 
+
+/* =====================================================
+ ✅ END OF FILE — Clean, Organized & Readable!
+===================================================== */
+/*Extra Added for profile card*/
+/* profile card design */
+
+

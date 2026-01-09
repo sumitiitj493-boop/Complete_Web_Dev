@@ -1,0 +1,432 @@
+/* ========== RESET & BASE STYLES ========== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+/* ========== CONTAINER ========== */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.container > h1 {
+    text-align: center;
+    color: white;
+    font-size: 48px;
+    margin-bottom: 40px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Using ::before pseudo-element to add decorative icon */
+.container > h1::before {
+    content: " ";
+}
+
+/* ========== CARD GALLERY LAYOUT ========== */
+.card-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* ========== CARD BASE STYLES ========== */
+.card {
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, box-shadow 0.3s;
+    position: relative;
+}
+
+/* Hover effect using :hover pseudo-class */
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Using ::after to add a shine effect on hover */
+.card::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent
+    );
+    transition: left 0.5s;
+}
+
+.card:hover::after {
+    left: 100%;
+}
+
+/* ========== CARD HEADER ========== */
+.card-header {
+    position: relative;
+    height: 200px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.card-header img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 5px solid white;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+/* Child selector: only direct img child gets this effect */
+.card-header > img:hover {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* ========== STATUS BADGE USING ATTRIBUTE SELECTORS ========== */
+.status-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+/* Attribute selector: data-status="online" */
+.card[data-status="online"] .status-badge {
+    background-color: #22c55e; /* Green */
+}
+
+/* Attribute selector: data-status="busy" */
+.card[data-status="busy"] .status-badge {
+    background-color: #f59e0b; /* Orange */
+}
+
+/* Attribute selector: data-status="offline" */
+.card[data-status="offline"] .status-badge {
+    background-color: #ef4444; /* Red */
+}
+
+/* Add tooltip using ::before pseudo-element */
+.status-badge::before {
+    content: attr(data-status);
+    position: absolute;
+    top: -35px;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+
+/* Show tooltip on hover */
+.status-badge:hover::before {
+    opacity: 1;
+}
+
+/* ========== CARD BODY ========== */
+.card-body {
+    padding: 25px;
+}
+
+.card-body h2 {
+    font-size: 24px;
+    color: #1e293b;
+    margin-bottom: 5px;
+}
+
+/* Add decorative underline using ::after */
+.card-body h2::after {
+    content: "";
+    display: block;
+    width: 50px;
+    height: 3px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+/* Adjacent sibling selector: paragraph right after h2 */
+.card-body h2 + p {
+    color: #667eea;
+    font-weight: 600;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* All paragraphs except the first one using :not() */
+.card-body p:not(:first-of-type) {
+    color: #64748b;
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* ========== SKILLS SECTION ========== */
+.skills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.skill {
+    background-color: #f1f5f9;
+    color: #475569;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+/* :hover pseudo-class for skill tags */
+.skill:hover {
+    background-color: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(102, 126, 234, 0.3);
+}
+
+/* Style first skill differently using :first-child */
+.skill:first-child {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Style last skill differently using :last-child */
+.skill:last-child {
+    border: 2px solid #667eea;
+    background-color: transparent;
+    color: #667eea;
+}
+
+/* nth-child example: every second skill */
+.skill:nth-child(2n) {
+    font-style: italic;
+}
+
+/* ========== CARD FOOTER ========== */
+.card-footer {
+    padding: 20px 25px;
+    background-color: #f8fafc;
+    display: flex;
+    gap: 10px;
+    border-top: 1px solid #e2e8f0;
+}
+
+/* ========== BUTTONS ========== */
+.btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 14px;
+    cursor: pointer;
+    transition: all 0.3s;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Primary button base */
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+}
+
+/* Secondary button base */
+.btn-secondary {
+    background-color: white;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+/* :hover pseudo-class for buttons */
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+}
+
+.btn-secondary:hover {
+    background-color: #667eea;
+    color: white;
+}
+
+/* :active pseudo-class - when button is clicked */
+.btn:active {
+    transform: scale(0.95);
+}
+
+/* :focus pseudo-class - when button is focused */
+.btn:focus {
+    outline: 3px solid rgba(102, 126, 234, 0.5);
+}
+
+/* Add ripple effect using ::before */
+.btn::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.btn:active::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* :disabled pseudo-class example */
+.btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none;
+}
+
+.btn:disabled:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* ========== ADVANCED COMBINATIONS ========== */
+/* Target only cards with online status that are hovered */
+.card[data-status="online"]:hover {
+    border: 2px solid #22c55e;
+}
+
+/* Target only cards with busy status that are hovered */
+.card[data-status="busy"]:hover {
+    border: 2px solid #f59e0b;
+}
+
+/* General sibling selector: all skills after the first one */
+.skill:first-child ~ .skill {
+    opacity: 0.8;
+}
+
+/* When hovering card, make all skills fully visible */
+.card:hover .skill:first-child ~ .skill {
+    opacity: 1;
+}
+
+/* ========== SELECTION STYLING ========== */
+::selection {
+    background-color: #667eea;
+    color: white;
+}
+
+/* Different selection for card headings */
+.card-body h2::selection {
+    background-color: #764ba2;
+    color: white;
+}
+
+/* ========== RESPONSIVE DESIGN ========== */
+@media (max-width: 768px) {
+    .card-gallery {
+        grid-template-columns: 1fr;
+    }
+
+    .container > h1 {
+        font-size: 36px;
+    }
+
+    .card-footer {
+        flex-direction: column;
+    }
+}
+
+/* ========== FIRST AND LAST CARD SPECIAL EFFECTS ========== */
+/* First card in gallery */
+.card-gallery > .card:first-child {
+    animation: slideInLeft 0.6s ease-out;
+}
+
+/* Last card in gallery */
+.card-gallery > .card:last-child {
+    animation: slideInRight 0.6s ease-out;
+}
+
+/* Cards in between (not first, not last) */
+.card-gallery > .card:not(:first-child):not(:last-child) {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========== PRINT STYLES (bonus!) ========== */
+@media print {
+    /* Hide buttons when printing */
+    .card-footer {
+        display: none;
+    }
+
+    /* Remove animations and hover effects */
+    .card {
+        transform: none !important;
+        box-shadow: none !important;
+    }
+}

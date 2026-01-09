@@ -1,0 +1,25 @@
+/* Descendant Selector (space): Selects all elements that are descendants of a specified element. */
+/* Selects all <p> elements that are descendants of a <div> with class "parent" */
+.parent p {
+    color: red;
+}
+/* Child Selector (>): Selects all elements that are direct children of a specified element. */
+/* Selects all <p> elements that are direct children of a <div> with class "parent" */
+.parent2 > p {
+    color: blue;
+}
+
+/* Adjacent Sibling Selector (+): Selects the first element that is immediately after another specified element. */
+/* Selects the first <p> element that is immediately after a <div> with class "parent" */
+.parent3 + p {
+    color: green;
+}
+
+/* General Sibling Selector (~): Selects all elements that are siblings of a specified element. */
+/* Selects all <p> elements that are siblings of a <div> with class "parent" */
+.parent4 ~ p {
+    color: orange;
+}
+.parent4 ~ h2 {
+    color: rgb(172, 105, 116);
+}

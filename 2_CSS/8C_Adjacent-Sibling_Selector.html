@@ -1,0 +1,22 @@
+<!--C.Adjacent Sibling Selector (+):This selector selects the first element that is immediately after another specified element. For example, if we have a <div> with class "parent" and a <p> element that is immediately after it, we can select that <p> element using the adjacent sibling selector. -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Page</title>
+    <link rel="stylesheet"  href="Combinator_Selector.css">
+    <!-- The CSS file child_selector.css contains the styles for the selectors. -->   
+</head>
+<body>
+    <div class="parent3">  
+        <p>Hello World</p>
+        <div class="parent3">
+            <p>This is a child element</p>
+        </div>
+        <p>This is first sibling element</p> <!--Now this <p> element get colored because it is immediately after the <div> with class "parent3" -->
+    </div>
+    <p>Hello World</p> <!--This <p> element get colored because it is immediately after the <div> with class "parent3" -->
+    <p>This is second sibling element</p>
+    <!-- The adjacent sibling <p> elements are selected. -->
+    
+</body>
+</html>

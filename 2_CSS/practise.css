@@ -1,0 +1,4 @@
+/*Only direct <p> children of .parent*/
+.parent > p {
+    color: red;
+}

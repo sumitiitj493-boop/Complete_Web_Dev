@@ -1,0 +1,56 @@
+/*This is  a CSS comment*/
+/*Breaking it down: 
+p=paragraph tag.used to style the text inside a paragraph.
+h1=heading 1 tag.used to style the largest heading.
+*/
+
+/*Reset default browser stylings for paragraph tag to prevent unwanted formatting*/
+body{
+    margin:0;
+    padding:0;
+    font-family: Arial, sans-serif;
+    background-color: #d7b8b8;
+}
+/*Style the card*/
+.card{
+    width:400px;
+    background-color: white;
+    text-align:center;
+}
+/*Style heading*/
+h1{
+    color:blue;
+    font-size:24px;
+}
+h2{
+    color: green;
+    font-size:20px;
+    font-weight: normal;
+}
+/*Style paragraph*/
+p{
+    color: black;
+    font-size: 18px;
+    line-height: 1.5;
+}
+*{
+    box-sizing: border-box; /* The Magic Line*/
+}
+.box{
+    width:300px;
+    height:100px;
+    background-color: yellow;
+    padding:20px;/*Space inside the box */
+    /*Adds 20px of space on ALL sides(top,right,bottom,left)*/
+    /*Total  width=300px(content)+20px(left padding)+20px(right padding)=340px!*/
+    box-sizing: border-box;/* The Magic Line*/
+    border:20px solid darkblue;/*5px thick, solid, dark blue */
+    margin :20px; /*space OUTSIDE the box*/
+    /*Margin is transparent space outside the border*/
+    /*It pushes other elements away*/
+
+}
+/*Different way to set padding & margin*/
+/*Method 1: We saw above*/
+/*Method 2: padding: 20px 40px; /* 20px top/bottom, 40px left/right */    /* 2 margin: 10px 20px; 10px top/bottom, 20px left/right */
+/*Method 3: padding 10px 20px 30px 40px; margin: 10px 20px 30px 40px; /* 10px top, 20px right, 30px bottom, 40px left *//*Clockwise: top, right, bottom, left */

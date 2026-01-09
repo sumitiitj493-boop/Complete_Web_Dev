@@ -1,0 +1,108 @@
+/* =========================================
+   GLOBAL STYLES
+   ========================================= */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f2f2f2;
+  margin: 0;
+  padding: 20px;
+  line-height: 1.6;
+}
+
+h1 {
+  color: darkblue;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+h2 {
+  color: #333;
+  margin-top: 40px;
+}
+
+hr {
+  margin: 30px 0; /* Adds space above and below the horizontal line.Here 30px is the margin top and bottom and 0 is the margin left and right.If we want to add margin left and right we can write margin: 30px 20px;*/
+  border: 1px solid #ddd;
+}
+
+/* =========================================
+   BUTTON STYLES
+   ========================================= */
+.button {
+  background-color: royalblue;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: transform 0.3s ease, background-color 0.3s ease;/* Adds a smooth transition effect when hovering over the button. transform 0.3s ease: Changes the size of the button by 10% (scale(1.1)) over 0.3 seconds with a smooth ease-in-out animation. background-color 0.3s ease: Changes the background color of the button to darkblue over 0.3 seconds with a smooth ease-in-out animation.*/
+  /*0.3s tells us that the transition effect will take 0.3 seconds to complete.*/
+}
+
+/* When mouse hovers over the button */
+.button:hover {
+  background-color: rgb(139, 0, 14);
+  transform: scale(1.1);
+}
+
+/* When button is being clicked (active state) */
+.button:active {
+  transform: scale(0.95);/* Changes the size of the button by 5% (scale(0.95)) over 0.3 seconds with a smooth ease-in-out animation.This feels natural as it simulates the button being pressed down.*/
+}
+
+/* =========================================
+   INPUT FIELD STYLES
+   ========================================= */
+input {
+  padding: 10px;
+  background-color: #d8a2a2;
+  border: 2px solid rgb(53, 21, 214);
+  border-radius: 6px;
+  width: 250px;
+  font-size: 15px;
+  margin-top: 10px;
+  transition: border-color 0.3s ease, outline 0.3s ease;
+}
+
+/* When input is focused (clicked) */
+input:focus {
+  border-color: blue;
+  outline: 3px solid lightblue;
+}
+
+/* =========================================
+   LINK STYLES
+   ========================================= */
+
+/* Unvisited links */
+a:link {
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Visited links */
+a:visited {
+  color: purple;
+}
+
+/* Hover effect on links */
+a:hover {
+  text-decoration: underline;
+}
+
+/* Active link (while clicking) */
+a:active {
+  color: red;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+footer {
+  text-align: center;
+  margin-top: 50px;
+  font-size: 14px;
+  color: #555;
+}

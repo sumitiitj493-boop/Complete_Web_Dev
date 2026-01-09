@@ -1,0 +1,80 @@
+ /* ========== RESET & BASE STYLES ========== */
+ /* Remove default margins and padding */
+ /*1. The Reset Section*/
+ /*The * means selects all elements */
+
+ * {
+    margin: 10px;
+    padding: 0;
+    box-sizing: border-box;
+}
+/*2.Style the body(whole page) */
+/*#f0f0f0 is a hexadecimal color code.
+font-family makes the text look more readable.
+padding makes sure the content inside the body doesn't touch the edges.
+*/
+body {
+    background-color: rgb(230, 216, 216); /* Light gray background */
+    font-family: Arial,sans-serif; /* Use Arial font */
+    padding: 40px; /* Add padding around the body */
+}
+ /* ========== CARD CONTAINER ========== */
+ .card{
+    background-color: rgb(248, 247, 247);
+    max-width: 600px;/* Set max width for the card */
+    width: 100%;
+    margin: 0 auto; /* Center the card */
+    border-radius: 10px;/* Add rounded corners */
+    overflow: hidden;/* Hide any overflowing content i.e. clean edges*/
+ }
+ /* ========== HEADER SECTION ========== */
+ .header{
+    background-color: #3498db;/* Blue background */
+    color: white;/* White text */
+    padding: 40px 20px;/* Add padding top and bottom, 20px left and right */
+    text-align: center;/* Center align text */
+ }
+ .header h1{
+    font-size: 36px;/* Set font size */
+    font-weight: bold;/* Make text bold */
+    margin-bottom: 10px;/* Add bottom margin */
+ }
+ .header h2{
+    font-size: 20px;/* Set font size */
+    font-weight: normal;/* Make text normal weight */
+    color: #ecf0f1;/* Light gray text */
+ }
+  /* ========== CONTENT SECTIONS ========== */
+  .about,.skills, .contact{
+    padding: 30px;/* Add padding */
+  }
+  /*Style all h3 heading in sections */
+  .about h3,.skills h3, .contact h3{
+    color: rgb(221, 23, 23);/* Dark gray text */
+    font-size: 24px;/* Set font size */
+    font-weight: bold;/* Make text bold */
+    margin-bottom: 15px;/* Add bottom margin */
+  }
+  /*style all paragraphs*/
+  .about p,.skills p,.contact p{
+    color: #7f8c8d;/* Medium gray text */
+    font-size: 16px;/* Set font size */
+    line-height: 1.6;/* Adjust line height */
+    margin-bottom: 10px;/* Add bottom margin */
+  }
+ /* ========== SPECIAL STYLING ========== */
+  /* Make skills text slightly bigger and bold */
+  .skills {
+    /* Set font size */
+    font-weight: bold;/* Make text bold */
+    color: #2c3e50; /*Dark gray text */
+    background-color:aqua;/* Light gray background */
+  }
+  /* Make contact section stand out */
+  .contact{
+    background-color: #f1c40f;/* Yellow background */
+  }
+  .about{
+    /* Make about section stand out */
+    background-color: greenyellow;/* Blue background */
+  }

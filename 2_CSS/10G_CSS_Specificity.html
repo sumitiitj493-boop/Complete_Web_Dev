@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS Specificity Demo</title>
+    <link rel="stylesheet" href="CSS_Specificity.css">
+</head>
+<body>
+
+    <!-- 
+        Summary / Purpose:
+        -----------------
+        This demo helps you understand CSS specificity:
+        1. Which rule wins when multiple rules target the same element.
+        2. How element, class, ID, inline, and !important affect styling.
+        3. Tie-breaker when specificity is equal.
+
+        What we are going to do:
+        - Style a single paragraph using different selectors.
+        - Observe which color "wins" based on specificity.
+    -->
+
+    <h1>CSS Specificity Demo</h1>
+
+    <div class="container">
+        <p id="main" class="text">Hello! This paragraph demonstrates CSS specificity.</p>
+    </div>
+
+    <!-- Inline style example -->
+    <p id="inline-example" style="color: brown;">This paragraph uses inline style.</p>
+
+</body>
+</html>

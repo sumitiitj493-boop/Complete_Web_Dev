@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSS Attribute Selectors Demo</title>
+  <link rel="stylesheet" href="Attribute_Selector.css">
+</head>
+
+<body>
+  <h1> CSS Attribute Selectors Example</h1>
+  <p>Each rule below demonstrates a different attribute selector in action.</p>
+
+  <hr>
+
+  <!-- 1️ Has the attribute -->
+  <h2>1 Has the attribute selector — [type]</h2>
+  <input type="text" placeholder="text Input">
+  <input type="password" placeholder="Password input">
+  <input placeholder="No type attribute"> <!-- Not Styled.That's why we didn't apply any style to it.-->
+
+  <hr>
+
+  <!-- 2 Exact match -->
+  <h2>2 Exact match — [type="text"]</h2>
+  <input type="text" placeholder="Styled (type='text')">
+  <input type="email" placeholder="Not styled (type='email')"><!--Here if you notice Exact matching-matching not happen.Because Attribute clearly says that type must be 'text' not 'email.But in above if you notice we only '-->
+  <input placeholder="No type attribute"> <!-- Not Styled. That's why we didn't apply any style to it.-->
+
+  <hr>
+
+  <!-- 3 Starts with -->
+  <h2>3 Starts with — [href^="https"]</h2><!--Here href^="https" means that href attribute must start with 'https'.By the way why ^? Ans: Because ^ means that href attribute must start with 'https'.-->
+  <a href="https://google.com" target="_blank">Secure (https)</a><br><!--Here a means anchor tag. Anchor tag is used to create hyperlinks. So we are styling anchor tag with href attribute that starts with 'https'.-->
+  <a href="http://example.com" target="_blank">Not secure (http)</a><!--If you notice very carefully then you will notice that it is not styled.Because Attribute clearly says that href must start with 'https' not 'http'.But in above if you notice we only have 'http' in href attribute. So it is not styled.-->
+
+  <hr>
+
+  <!-- 4 Ends with -->
+  <h2>4 Ends with — [href$=".pdf"]</h2><!--Here href$=".pdf" means that href attribute must end with '.pdf'.By the way why $? Ans: Because $ means that href attribute must end with '.pdf'.-->
+  <a href="Attribute.pdf">Download Notes (PDF)</a><br>
+  <a href="notes.docx">Download Notes (DOCX)</a><!--If you notice very carefully then you will notice that it is not styled.Because Attribute clearly says that href must end with '.pdf' not '.docx'.But in above if you notice we only have '.docx' in href attribute. So it is not styled.-->
+
+  <hr>
+
+  <!-- 5 Contains -->
+  <h2>5 Contains — [class*="btn"]</h2>
+  <button class="btn-primary" >Primary Button</button>
+  <button class="btn-danger">Danger Button</button>
+  <button class="big-button">Not Styled</button><!--If you notice very carefully then you will notice that it is not styled.Because Attribute clearly says that class must contain 'btn' not 'big-button'.But in above if you notice we only have 'big-button' in class attribute. So it is not styled.-->
+
+</body>
+</html>

@@ -1,0 +1,74 @@
+/* General styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+
+/* -------------------------------
+   Headings Section (::before and ::after)
+---------------------------------*/
+h2::before {
+    content: "★ "; /* Add star before heading */
+    color: gold;
+    font-size: 24px;
+}
+
+h2::after {
+    content: ""; /* Decorative line after heading */
+    display: block;
+    width: 50px;
+    height: 3px;
+    background-color: blue;
+    margin-top: 10px;
+}
+
+/* -------------------------------
+   Quotes Section (::before and ::after)
+---------------------------------*/
+quote::before {
+    content: "“";
+    font-size: 40px;
+    color: gray;
+}
+
+quote::after {
+    content: "”";
+    font-size: 40px;
+    color: gray;
+}
+
+/* -------------------------------
+   Links Section (::before)
+---------------------------------*/
+a[href^="https"]::before {
+    content: "🔗 "; /* Icon before HTTPS links */
+}
+
+/* -------------------------------
+   Paragraph Section (::first-letter and ::first-line)
+---------------------------------*/
+p::first-letter {
+    font-size: 48px;
+    font-weight: bold;
+    color: red;
+    float: left;
+    margin-right: 5px;
+}
+
+p::first-line {
+    font-weight: bold;
+    color: blue;
+}
+
+/* -------------------------------
+   Text Selection (::selection)
+---------------------------------*/
+::selection {
+    background-color: yellow;
+    color: black;
+}
+
+p::selection {
+    background-color: lightblue;
+    color: white;
+}
